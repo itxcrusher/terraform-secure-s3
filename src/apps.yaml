@@ -1,0 +1,5 @@
+# One logical app-env per item
+apps:
+  - Name:  test
+    Env:   dev
+    KeyGroupName: keygroupdev

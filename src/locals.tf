@@ -14,6 +14,17 @@ locals {
   }
 }
 
+locals {
+  raw_apps = yamldecode( file(var.apps_yaml_path) ).apps
+
+  # key = "<name>-<env>-<keygroup>"
+  apps_map = {
+    for a in local.raw_apps :
+    "${a.Name}-${a.Env}-${a.KeyGroupName}" => a
+    if var.env_filter == "" || a.Env == var.env_filter
+  }
+}
+
 ################################
 # Optional “surgical” extras   #
 ################################
@@ -22,3 +33,5 @@ variable "extra_role_actions" {
   type        = map(list(string))
   default     = {}
 }
+
+

@@ -50,7 +50,9 @@ module "iam_roles" {
 # S3  + CloudFront #
 ####################
 module "s3_module" {
-  for_each = toset(var.app-names-list)
+  # for_each = toset(var.app-names-list)
+  for_each = local.apps_map
+
   source   = "./modules/s3"
 
   s3_object = {
@@ -85,7 +87,9 @@ locals {
 # Secrets Manager (all)  #
 ##########################
 module "secretManager_module" {
-  for_each = toset(var.app-names-list)
+  # for_each = toset(var.app-names-list)
+  for_each = local.apps_map
+  
   source   = "./modules/secret_manager"
 
   secretManager_object = {

@@ -1,5 +1,6 @@
+*.pem
+*.csv
 
-#
 .env
 .env.sh
 env.sh
