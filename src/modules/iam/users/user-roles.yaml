@@ -1,0 +1,18 @@
+# user-roles.yaml
+
+users:
+  - username: service-bot
+    fullName: Service Bot
+    roles: [serviceAccount]
+
+  - username: tsmith-user
+    fullName: Tom Smith
+    roles: [admin]
+
+  - username: dev-jane
+    fullName: Jane Developer
+    roles: [developer]
+
+  - username: auditor-sara
+    fullName: Sara Auditor
+    roles: [readOnly]

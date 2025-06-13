@@ -1,12 +1,18 @@
-*.pem
+
+#
+.env
+.env.sh
+env.sh
+shell/backend_init.sh
+private/cloudfront_keys/*
 .DS_Store
-Thumbs.db
-*.log
-.terraform.lock.hcl
+private/iam_access_keys/*
+private/images/*
+private/secret_manager_secrets/*
 
 
 # Local .terraform directories
-.terraform/
+**/.terraform/*
 
 # .tfstate files
 *.tfstate
@@ -42,3 +48,33 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# TS coverage and test artifacts
+coverage/
+jest.*
+
+# Ignore compiled JS (if any)
+*.js
+*.js.map
+
+# Local script or debug output
+*.log
+*.bak
+*.swp
+*.tmp
+*.out
